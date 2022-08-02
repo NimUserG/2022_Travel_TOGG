@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.board-container {
+  width: 63.5%;
+  border: 1px solid #333;
+  margin: 0 auto;
+  padding: 15px 10px;
+  border-radius: 5px;
+  margin-bottom : 50px;
+  text-align: center;
+}
+
+.board-container table {
+  width: 100%;
+  text-align: center;
+}
+
+.board-container table tr {
+  border-bottom: 1px solid #000;
+}
+
+.board-container table th {
+  width: 30%;
+}
+
+.board-container table td {
+  width: 70%;
+}
+
+.board-container table .tit_tr {
+  margin-bottom: 5em;
+  border: none;
+  background-color: #DDD;
+}
+
+.board-container .cont_th {
+  border-right: 1px dashed #000;
+
+}.board-container .cont_td {
+}
+
+.form-wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title-input {
+  width: 80%;
+  height: 40px;
+  margin: 10px;
+  padding: 2px 7px;
+}
+
+.text-area {
+  width: 80%;
+  min-height: 500px;
+  padding: 12px 7px;
+  resize: none;
+}
+
+.submit-button {
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  padding: 0 20px;
+  margin-top: 10px;
+  margin-left: 50%;
+  margin-bottom: 8em;
+  border: none;
+  background: rgb(159, 206, 97);
+  border-radius: 5px;
+  text-align: center;
+}

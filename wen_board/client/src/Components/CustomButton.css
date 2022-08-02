@@ -1,0 +1,13 @@
+.button {
+min-width: 7em;
+max-width: 20em;
+height: 50px;
+font-size: 20px;
+padding: 0 1em;
+margin: 1em 0;
+margin-top: 10px;
+border: none;
+background: rgb(159, 206, 97); 
+border-radius: 5px;
+text-align: center;
+}

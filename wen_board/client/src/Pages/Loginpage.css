@@ -1,0 +1,59 @@
+.Login {
+    text-align: center;
+  }
+  
+  .board-container {
+    width: 63.5%;
+    border: 1px solid #333;
+    margin: 0 auto;
+    padding: 15px 10px;
+    border-radius: 5px;
+    margin-bottom : 50px;
+    text-align: center;
+  }
+  
+  .board-container table {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .board-container table tr {
+    border-bottom: 1px solid #000;
+  }
+  
+  .board-container table th {
+    width: 30%;
+  }
+  
+  .board-container table td {
+    width: 70%;
+  }
+  
+  .board-container table .tit_tr {
+    margin-bottom: 5em;
+    border: none;
+    background-color: #DDD;
+  }
+  
+  .board-container .cont_th {
+    border-right: 1px dashed #000;
+  
+  }.board-container .cont_td {
+  }
+  
+  .form-wrapper{
+    width: 30%;
+    margin: 10em auto;
+    padding: 3em 2em;
+    border: 1pt solid #000;
+    border-radius: 5px;
+  }
+  
+  .txt-input {
+    display:inline-block;
+    min-width: 15em;
+    max-width: 20em;
+    height: 40px;
+    margin: 10px 0;
+    padding: 2px 7px;
+  }
