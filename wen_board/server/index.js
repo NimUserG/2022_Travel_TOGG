@@ -11,6 +11,10 @@ const db = mysql.createPool({
     user: "travelok",
     password: "travel@1302",
     database: "dbtravelok"
+    // host: "localhost",
+    // user: "root",
+    // password: "1234",
+    // database: "testdb"
 });
 
 app.use(cors())
@@ -18,24 +22,43 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //--------{board}------------------------------------------------------------------------
+// app.get("/api/boardGet", (req, res)=>{
+//     const sqlQuery = "select idx as id, title, content, DATE_FORMAT(created_at,'%Y-%m-%d') as date from board";
+//     db.query(sqlQuery, (err, result)=>{
+//         res.send(result);
+//     })
+// })
 app.get("/api/boardGet", (req, res)=>{
-    const sqlQuery = "select idx as id, title, content, DATE_FORMAT(created_at,'%Y-%m-%d') as date from board";
+    const sqlQuery = "select * from board";
     db.query(sqlQuery, (err, result)=>{
         res.send(result);
     })
 })
 
+
 app.post("/api/boardPost", (req, res) => {
     const title = req.body.title;
     const content = req.body.content;
-    console.log(title);
-    console.log(content);
-    const sqlQuery = "INSERT INTO board (title, content, created_at) VALUES (?,?,DATE_FORMAT(now(),'%Y-%m-%d'))";
-    db.query(sqlQuery, [title, content], (err, result) => {
+    const image = req.body.image;
+    const sqlQuery = "INSERT INTO board (title, content, image, created_at) VALUES (?,?,?,DATE_FORMAT(now(),'%Y-%m-%d'))";
+    db.query(sqlQuery, [title, content, image], (err, result) => {
         res.send('success!');
     });
 });
 
+app.get("/api/detaileGet", (req, res)=>{
+    // res.header("Access-Control-Allow-Origin", "*");
+    // res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS");
+    // res.header("Access-Control-Max-Age","3600");
+    // res.header("Access-Control-Allow-Headers", "Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization");
+
+    // const idx = req.query.idx;
+    const idx = 'manager';
+    const sqlQuery = "SELECT COUNT(*) AS result FROM users WHERE id=?";
+    db.query(sqlQuery, idx, (err, result)=>{
+        res.send(result);
+    })
+})
 
 //--------{login}------------------------------------------------------------------------
 app.post('/api/onLogin', (req, res) => {
@@ -81,3 +104,16 @@ app.post('/api/onLogin', (req, res) => {
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
+
+app.post('/api/onD', (req, res) => {
+    console.log('hi');
+    //user_id, user_pw 변수 선언
+    const user_id = req.query.user_id;
+    const user_pw = req.query.user_pw;
+    const idx = 'manager';
+    //입력된 id 와 동일한 id DB에서 확인
+    const sqlQuery1 = "SELECT * FROM users WHERE id='manager'";
+    db.query(sqlQuery1, (error, result) => {
+        res.send(error,result);
+    })
+})

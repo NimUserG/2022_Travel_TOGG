@@ -11,14 +11,6 @@ import useWindowDimensions from './GetWindowDimensions';
 function HomeNavbar() {
     const [maincolor,setMaincolor] = useState("");
     const [navHidden, setnavHidden] = useState("false");
-    // const { height, width } = useWindowDimensions();
-    // const fNavHidden = (target) => { 
-    //   if(target){
-
-    //   }else{
-
-    //   }
-    // };
   return (
     <>
       {['sm'].map((expand) => (

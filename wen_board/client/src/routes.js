@@ -3,6 +3,7 @@ import LoginPage from './Pages/Loginpage';
 import MapPage from './Pages/Mappage';
 import ListPage from './Pages/Community/Listpage';
 import EditPage from './Pages/Community/Editpage';
+import DetailedPage from './Pages/Community/Detailedpage';
 
 const routes = [
 {
@@ -16,6 +17,10 @@ const routes = [
 {
   path: '/map',
   component: MapPage
+},
+{
+  path: '/community/detaile',
+  component: DetailedPage
 },
 {
   path: '/community/edit',

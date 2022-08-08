@@ -11,7 +11,6 @@ function Login() {
     
     // 페이지 렌더링 후 가장 처음 호출
     useEffect(() => {
-        alert(Set.serverurl);
         Axios.get(Set.serverurl + '/api/login'
         ).then((response)=>{
             console.log(response)

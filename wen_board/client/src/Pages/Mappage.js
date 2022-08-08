@@ -3,27 +3,31 @@ import React, { Component } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
 const containerStyle = {
-    width: '400px',
-    height: '400px'
+    // width: '400px',
+    height: '700px',
+    margin: '10px'
   };
   
   const center = {
-    lat: -3.745,
-    lng: -38.523
+    lat: 35.134440436932586,
+    lng: 129.10330006422268 
   };
+
+  const zoom = 18;
 
 class MyComponents extends Component {
     render() {
       return (
         <LoadScript
-          googleMapsApiKey="AIzaSyDpQKIsBojlAQ0ZAcJL-RbGWnGZJqBpLU8"
+          googleMapsApiKey="AIzaSyDWe1cq9AXDxaJOJ30mctlAnN8yYXvh1bM"
         >
           <GoogleMap
-            bootstrapURLKeys={{key:"AIzaSyDpQKIsBojlAQ0ZAcJL-RbGWnGZJqBpLU8"}}
+            bootstrapURLKeys={{key:"AIzaSyDWe1cq9AXDxaJOJ30mctlAnN8yYXvh1bM"}}
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={10}
+            zoom={zoom}
           >
+            
             { /* Child components, such as markers, info windows, etc. */ }
             <></>
           </GoogleMap>
@@ -36,6 +40,8 @@ class MyComponents extends Component {
     //       	defaultCenter={{ lat: 37.5, lng: 127 }}
     //     ></GoogleMap>
     //   </div>
+
+    
       )
     }
   }
